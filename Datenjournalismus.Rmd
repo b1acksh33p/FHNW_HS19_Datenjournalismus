@@ -73,17 +73,17 @@ Die Variabeln Land, Jahr und Beitrag haben keine leeren Zellen oder "NA"s.
 data_croatia <- subset_condensed
 ```
 
-Durch Zeitrestriktionen und relativ komplexen Strukturen in den Daten, werden im nächsten Schritt, Zwecks Effizienz, die Daten in ein CSV geschrieben und im Excel so formatiert, dass die Kategorien einfach vergleichbar sind. Dazu gehört: 
-1. Zusätzliche Spalte erstellen für "high_level_category"
-2. Kategorie wenn in beiden Spalten (aidddata_sector_name + crs_sector_name) die selbe Info besteht, übernehmen
-3. Falls nur ein Feld die Information hat diese übernehmen
-4. Falls die Felder unterschiedliche Informationen haben, ist die Spalte "aiddata_sector_name" führend.
-5. Die Datei in drei Unterkategorien teilen: 
+Durch Zeitrestriktionen und relativ komplexen Strukturen in den Daten, werden im nächsten Schritt, Zwecks Effizienz, die Daten in ein CSV geschrieben und im Excel so formatiert, dass die Kategorien einfach vergleichbar sind. Dazu gehört:     
+1. Zusätzliche Spalte erstellen für "high_level_category"    
+2. Kategorie wenn in beiden Spalten (aidddata_sector_name + crs_sector_name) die selbe Info besteht, übernehmen    
+3. Falls nur ein Feld die Information hat diese übernehmen    
+4. Falls die Felder unterschiedliche Informationen haben, ist die Spalte "aiddata_sector_name" führend    
+5. Die Datei in drei Unterkategorien teilen:     
 
 
-5.1 Basierend auf Spenden per Nation
-5.2. Basieren auf Spenden per Organisation
-5.3. Auf keiner Zusammenfassun basierend
+5.1 Basierend auf Spenden per Nation    
+5.2. Basieren auf Spenden per Organisation    
+5.3. Auf keiner Zusammenfassun basierend    
 
 
 
@@ -124,6 +124,10 @@ category_sum_organisations = summarise(category_sum_organisations,
 
 donation_sum_all_by_year = group_by(data_croatia_donor_all_clean, year)
 donation_sum_all_by_year = summarise(donation_sum_all_by_year, 
+                      sum_amount = sum(amount_in_USD))
+
+donation_sum_nations = group_by(data_croatia_donor_nations_clean, donor)
+donation_sum_nations = summarise(donation_sum_nations, 
                       sum_amount = sum(amount_in_USD))
 
 
@@ -173,6 +177,9 @@ international_aid + theme_light()
 
 ```
 
+```{r}
+donation_sum_nations_top_10 <- donation_sum_nations %>% top_n(10)
+```
 
 
 ```{r}
