@@ -198,7 +198,7 @@ donors_top_10 + theme_bw()
 Die Interpretation der Daten wird in einer Story auf Medium durchgeführt. 
 Die Story an sich kann unter folgendem Link gelesen werden:
 
-[Go to Medium- Story](https://medium.com/@eugen.cuic/why-was-croatia-supported-after-the-balkan-war-and-by-who-fc78edc0c4cb?sk=27cd804cc22b6f399f3b0d6616724bc4)
+[Go to Medium- Story](https://medium.com/@eugen.cuic/why-was-croatia-supported-after-the-balkan-war-and-by-who-fc78edc0c4cb)
 
 ### 5. Iterration
 Weitere zusätzliche Interrationen können stattfinden nachdem die Daten online publiziert worden sind und möglicherweise neue Informationen durch Kommentare auf Medium hinzugefügt werden. Anderseits können in einer vertiefenderer Arbeit auch zusätzliche Aspekte beleuchtet werden. In dieser Arbeit gibt es aber keie weitere Iterration
